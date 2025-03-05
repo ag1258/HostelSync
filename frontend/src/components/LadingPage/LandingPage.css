@@ -95,7 +95,7 @@ body {
 }
 
 .header {
-    background-image: url("../../../assets/about.webp");
+    background-image: url("../../assets/headerbg.jpg");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -189,7 +189,7 @@ nav {
     margin-bottom: 1rem;
     font-size: 1.7rem;
     font-weight: 400;
-    color: black;
+    color: rgb(223, 250, 255);
     text-align: center;
     margin-top: 1rem;
     opacity: 1;
@@ -266,7 +266,7 @@ nav {
 .about__image img {
     max-width: 450px;
     margin: auto;
-    border-radius: 20px;
+    /* border-radius: 20px; */
     cursor: pointer;
     border: 2px solid #444;
 }
@@ -358,71 +358,6 @@ nav {
     font-size: 1.1rem;
     color: var(--text-dark);
 }
-.service {
-    background-image: url("../../../assets/service.jpg");
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 100px;
-    margin: 0 20px;
-}
-
-.service__container {
-    padding-block: 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.service__content {
-    grid-column: 1/3;
-    padding: 2rem 4rem;
-    background-color: var(--white);
-}
-
-.service__list {
-    list-style: none;
-    margin-top: 2rem;
-    display: grid;
-    gap: 2rem;
-}
-
-.service__list li {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: var(--text-dark);
-}
-
-.service__list span {
-    padding: 5px 12px;
-    font-size: 1.75rem;
-    color: var(--text-dark);
-    background-color: var(--text-light);
-    border-radius: 100%;
-}
-
-.service__list li:nth-child(1) span {
-    color: #1c71da;
-    background-color: #dbeafe;
-}
-
-.service__list li:nth-child(2) span {
-    color: #db3a8d;
-    background-color: #fce7f3;
-}
-
-.service__list li:nth-child(3) span {
-    color: #9c5fda;
-    background-color: #f3e8ff;
-}
-
-.service__list li:nth-child(4) span {
-    color: #da5266;
-    background-color: #ffe4e6;
-}
-
 .banner__content {
     padding: 2rem;
     display: flex;
@@ -432,12 +367,14 @@ nav {
     flex-wrap: wrap;
     border-radius: 10px;
     border: 2px solid rgba(0, 0, 0, 0.8);
-    box-shadow: 5px 5px 10px rgba(13, 125, 153, 0.712);
+    height: 200px;
+    background: url("../../assets/loginbg.jpg") no-repeat center center;
+    background-size: cover;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .banner__content:hover {
-    transform: scale(1.05) rotateX(10deg) ; 
-    box-shadow: 10px 15px 20px rgba(13, 125, 153, 0.8); 
+    transform: scale(1.05) rotateX(10deg);
 }
 
 .banner__card {
@@ -448,11 +385,11 @@ nav {
 .banner__card h4 {
     font-size: 2rem;
     font-weight: 600;
-    color: var(--text-dark);
+    color: white;
 }
 
 .banner__card p {
-    color: var(--text-light);
+    color: white;
 }
 
 .explore :is(.section__subheader, .section__header) {
@@ -467,7 +404,7 @@ nav {
     margin: 0 20px 20px 20px;
     display: grid;
     grid-template-columns: minmax(1rem, 1fr) minmax(0, var(--max-width)) minmax(1rem, 1fr);
-    background-image: url("../../../assets/explore.jpg");
+    background-image: url("../../assets/explore.jpg");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;

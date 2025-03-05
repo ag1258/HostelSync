@@ -4,6 +4,7 @@ const JWT_SECRET  = "123"
 const bcrypt = require("bcrypt");
 const reservation = require('../models/reservationModel');
 // const { sendGreetMail } = require("../helper/mailServices");
+
 const register = async (req, res) => {
     try {
         const {
@@ -16,12 +17,10 @@ const register = async (req, res) => {
             $or: [{ email: email }, { enrollmentID: enrollmentID }],
         });
 
-        // const requiredFields = Object.keys(Admin.schema.paths).filter(field => Admin.schema.paths[field].isRequired);
-
         if (existingUser) {
             console.log("User already exists");
             return res.status(400).json({
-                msg: "User already exists with this email or enrollment ID",
+                msg: "User already exists with this email or enrollment ID, Kindly Sign In",
             });
         }
         const saltRounds = 10;
@@ -45,15 +44,13 @@ const register = async (req, res) => {
 };
 const login = async (req, res) => {
     try {
-        console.log('Received login request:', req.body); // Debug log to see what is coming in
-
         const { enrollmentID, password } = req.body;
         console.log(enrollmentID,password)
 
         // Ensure all fields are filled
         for (const key in req.body) {
             if (!req.body[key] || req.body[key].trim() === "") {
-                console.log(`Field ${key} is missing or empty`); // Debug log
+                console.log(`Field ${key} is missing or empty`);
                 return res.status(400).json({
                     status: 400,
                     msg: `Field ${key} is missing or empty`,
@@ -65,13 +62,13 @@ const login = async (req, res) => {
 
         if (!user) {
             console.log("User not found with the provided enrollmentID")
-            return res.status(401).json({ msg: "Incorrect credentials" });
+            return res.status(401).json({ msg: "Kindly Sign up, there is no account with this enrollmentID" });
         }
         const isMatch = await bcrypt.compare(password, user.password);
 
         if (!isMatch) {
             console.log("Password does not match");
-            return res.status(401).json({ msg: "Incorrect credentials" });
+            return res.status(401).json({ msg: "Wrong Credentails" });
         }
         const token = jwt.sign({email : user.email , _id : user._id, enrollmentID: user.enrollmentID} , JWT_SECRET , {expiresIn : "1h"})
         console.log(token);
@@ -93,10 +90,8 @@ const updateUser = async (req, res) => {
         const id = req.params._id;
         const update = req.body;
 
-        // Get the schema paths (field names)
         const schemaFields = Object.keys(User.schema.paths);
 
-        // Check for any unknown fields
         for (const key in update) {
             if (!schemaFields.includes(key)) {
                 return res.status(400).json({

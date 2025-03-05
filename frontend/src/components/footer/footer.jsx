@@ -15,9 +15,9 @@ function Footer() {
                     <div class="footer__col">
                         <h4>QUICK LINKS</h4>
                         <ul class="footer__links">
-                            <li><a href="/reservation">My Reservation</a></li>
-                            <li><a href="#">View Room</a></li>
-                            <li><a href="/user/profile">Manage Profile</a></li>
+                            <li><a href="/viewmess">View Mess</a></li>
+                            <li><a href="#rooms">View Room</a></li>
+                            <li><a href="/user-signup">Profile</a></li>
                         </ul>
                     </div>
                     <div class="footer__col">

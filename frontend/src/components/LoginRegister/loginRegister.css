@@ -22,7 +22,7 @@
 
 .logMain {
     font-family: 'Montserrat', sans-serif;
-    background: url('../../../assets/loginbg.jpg') center center no-repeat;
+    background: url('../../assets/loginbg.jpg') center center no-repeat;
     background-size: cover;
     display: flex;
     align-items: center;

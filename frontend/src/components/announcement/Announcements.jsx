@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import Navbar from '../navbar/navbar';
-import Footer from '../footer/footer';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import Navbar from "../navbar/navbar";
+import Footer from "../footer/footer";
+import { Link } from "react-router-dom";
+
 // const announcements = [
 //   {
 //     title: "Campus Maintenance Alert",
@@ -46,79 +48,95 @@ import Footer from '../footer/footer';
 // ];
 
 const Announcements = () => {
-    const [announcements, setAnnouncements] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+  const [announcements, setAnnouncements] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-    useEffect(() => {
-        const fetchAnnouncements = async () => {
-            try {
-                const response = await axios.get('http://localhost:3005/announcements');
-                setAnnouncements(response.data);
-            } catch (error) {
-                setError('Failed to fetch announcements');
-            } finally {
-                setLoading(false);
-            }
-        };
+  useEffect(() => {
+    const fetchAnnouncements = async () => {
+      setLoading(true);
+      setError("");
+      try {
+        const response = await axios.get(
+          "http://localhost:3005/announcements",
+          { withCredentials: true }
+        );
+        setAnnouncements(response.data);
+      } catch (error) {
+        setError(error.response?.data?.message || "Failed to fetch announcements");
+      } finally {
+        setLoading(false);
+      }
+    };
 
-        fetchAnnouncements();
-    }, []);
+    fetchAnnouncements();
+  }, []);
+  
+  return (
+    <>
+      <Navbar />
+      <div className="min-h-[500px] justify-center flex space-x-2 my-5">
+        {/* Left-side image */}
+        <div className="sticky w-[500px] min-h-[300px] mx-[100px]">
+          <img
+            src="/announcements.jpg"
+            alt="Announcements"
+            className="sticky h-[500px] w-[600px] top-0"
+          />
+        </div>
 
-    if (loading) {
-        return <div className="text-center m-5">Loading announcements...</div>;
-    }
+        {/* Announcements List */}
+        <div>
+          <h1 className="text-2xl font-bold mb-4 mx-[18px] text-primary">
+            Announcements
+          </h1>
 
-    if (error) {
-        return <div className="text-center m-5 text-red-500">{error}</div>;
-    }
-
-    return (
-        <>
-            <Navbar />
-            <div className="min-h-[500px] justify-center flex space-x-2 my-5">
-                {/* Left-side image */}
-                {/* <div className="sticky w-[500px] min-h-[300px] mx-[100px]">
-                    <img src="/announcements.jpg" alt="Announcements" className="sticky h-[500px] w-[600px] top-0" />
-                </div> */}
-
-                {/* Announcements List */}
-                <div>
-                    <h1 className="text-2xl font-bold mb-4 mx-[18px] text-primary">Announcements</h1>
-
-                    {announcements.length > 0 ? (
-                        announcements.map((announcement) => (
-                            <div
-                                key={announcement._id}
-                                className="announcement-box flex flex-col md:flex-row justify-between m-5 p-5 bg-gray-200 rounded-lg shadow-md text-black w-[850px]"
-                            >
-                                {/* Left Section */}
-                                <div className="left-side w-[600px] md:w-1/2">
-                                    <p className="mb-2">
-                                        <strong>Title:</strong> {announcement.title}
-                                    </p>
-                                    <p>
-                                        <strong>Description:</strong> {announcement.description}
-                                    </p>
-                                </div>
-
-                                {/* Right Section */}
-                                <div className="right-side w-full md:w-1/2 flex flex-col items-center justify-center md:items-end">
-                                    <p>
-                                        <strong>Date:</strong>{' '}
-                                        {new Date(announcement.createdAt).toLocaleString()}
-                                    </p>
-                                </div>
-                            </div>
-                        ))
-                    ) : (
-                        <p className="text-center text-gray-500">No announcements available.</p>
-                    )}
-                </div>
+          {loading && (
+            <div className="text-center text-blue-600 mt-5">
+              Loading announcements...
             </div>
-            <Footer />
-        </>
-    );
+          )}
+
+          {error && (
+            <div className="text-center text-red-500 mt-5">{error}</div>
+          )}
+
+          {announcements.length > 0
+            ? announcements.map((announcement) => (
+                <div
+                  key={announcement._id}
+                  className="announcement-box flex flex-col md:flex-row justify-between m-5 p-5 bg-gray-200 rounded-lg shadow-md text-black w-[850px]"
+                >
+                  {/* Left Section */}
+                  <div className="left-side w-[600px] md:w-1/2">
+                    <p className="mb-2">
+                      <strong>Title:</strong> {announcement.title}
+                    </p>
+                    <p>
+                      <strong>Description:</strong> {announcement.description}
+                    </p>
+                  </div>
+
+                  {/* Right Section */}
+                  <div className="right-side w-full md:w-1/2 flex flex-col items-center justify-center md:items-end">
+                    <p>
+                      <strong>Date:</strong>{" "}
+                      {new Date(announcement.createdAt).toLocaleString()}
+                    </p>
+                  </div>
+                </div>
+              ))
+            : !loading &&
+              !error && (
+                <p className="text-center text-gray-500">
+                  No announcements available.
+                </p>
+              )}
+        </div>
+      </div>
+      <Footer />
+    </>
+  );
 };
 
 export default Announcements;

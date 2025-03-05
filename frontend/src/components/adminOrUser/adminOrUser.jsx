@@ -26,15 +26,15 @@ function AdminOrUser(props) {
                 <div className="popup_holder">
                     <div className="popup">
                         <div className="boxNew admin_box">
-                            <div className="overlay over_admin" onClick={handleAdminClick}>
+                            <div className="overlay over_user" onClick={handleAdminClick}>
                                 <BsPersonVcard className='illustration'/>
-                                <h1>Warden</h1>
+                                <h1 className='headingadmin'>Warden</h1>
                             </div>
                         </div>
                         <div className="boxNew user_box">
                             <div className="overlay over_user" onClick={handleUserClick} >
                                 <PiStudentBold className='illustration'/>
-                                <h1>Student</h1>
+                                <h1 className='headingstudent'>Student</h1>
                             </div>
                         </div>
                     </div>

@@ -10,10 +10,13 @@
     border: 1px solid grey;
 }
 .admin_box {
-    background-image: url(../../../assets/warden.webp);
+    background-image: url('../../assets/warden.webp');
+    background-size: cover;
 }
 .user_box {
-    background-image: url(../../../assets/student.webp);
+    background-image: url('../../assets/student.jpg');
+    background-size: cover;
+
 }
 .overlay {
     position: absolute;
@@ -24,9 +27,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: black;
-    color: aliceblue;
-    opacity: 70%;
+    background-color: rgb(0, 0, 0);
+    color: rgb(200, 255, 255);
+    opacity: 90%;
 }
 .overlay:hover {
     opacity: 10%;

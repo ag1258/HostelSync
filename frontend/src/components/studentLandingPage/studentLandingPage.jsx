@@ -3,7 +3,7 @@ import {Col, Container, Row} from 'react-bootstrap'
 import {useNavigate, NavLink, Link } from 'react-router-dom'
 import '../studentLandingPage/studentLandingPage.css'
 import Navbar from '../navbar/navbar'
-import Footer from '../footer/footer'
+import Footer from '../footer/StudentFooter'
 import Bookings from '../booking/booking'
 import '../repeatPop.css'
 import Gatepass from '../gatepass/gatepass'
@@ -11,7 +11,6 @@ import Complaint from '../complaint/complaint'
 import { BsFillPencilFill } from "react-icons/bs";
 import Cookies from 'js-cookie';
 import axios from 'axios'
-// import studentModel from '../../../../backend/models/studentModel'
 
 function StudentLandingPage() {
     const [loopNum, setLoopNum] = useState(0)
@@ -76,7 +75,7 @@ function StudentLandingPage() {
                         <div className="userImg">
                         <span className='tagline'>Welcome Student</span>
                         <h1>{`New `}<span className='wrap'>{text}</span></h1>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate dolores eum accusantium sapiente amet! Rerum cupiditate facilis, voluptates ipsam autem voluptate exercitationem, quos corporis iste eum sequi fugit, placeat saepe.</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate dolores eum accusantium sapiente amet! Rerum cupiditate facilis, </p>
                         <button onClick={handlePopBook} className='btn'>Book Room</button>
                         </div>
 

@@ -24,7 +24,7 @@ body {
 }
 
 .banner {
-    background-image: url('../../../assets/about.webp');
+    background-image: url('../../assets/studentheaderbg.jpg');
     border-radius: 100px;
     margin: 0 20px 0 20px;
     padding: 100px 0 100px 0;
@@ -127,7 +127,7 @@ body {
     display: grid;
     grid-template-columns:
         minmax(1rem, 1fr) minmax(0, var(--max-width)) minmax(1rem, 1fr);
-    background-image: url("../../../assets/explore.jpg");
+    background-image: url("../../assets/explore.jpg");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;

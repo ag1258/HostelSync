@@ -17,9 +17,9 @@ const Studentdetails = () => {
       .catch(error => console.error('Error fetching student data:', error));
   }, []);
 
-  if (!studentData.length) {
-    return <div>Loading...</div>;
-  }
+  // if (!studentData.length) {
+  //   return <div>Loading...</div>;
+  // }
 
   return (
     <>

@@ -3,6 +3,7 @@ import axios from "axios";
 import Navbar from "../navbar/navbar";
 import Footer from "../footer/StudentFooter";
 import { Link } from "react-router-dom";
+import complaint_side from "../../assets/complaint_side.png"
 
 const StudentComplaints = () => {
   const [complaints, setComplaints] = useState([]);
@@ -46,14 +47,14 @@ const StudentComplaints = () => {
       <div className="min-h-[500px] flex space-x-2 my-5">
         <div className="sticky w-[500px] min-h-[300px] mx-[100px]">
           <img
-            src="/9557011.jpg"
+            src={complaint_side}
             alt="about"
-            className="sticky h-[500px] w-[600px] top-0"
+            className="sticky h-[400px] w-[500px] top-0"
           />
         </div>
         <div>
           <Link to="/complaint">
-            <button className="px-4 py-2 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 mx-[18px]">
+            <button className="px-4 py-2 bg-primary-dark text-white font-semibold rounded-lg shadow-md hover:bg-primary focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 mx-[18px]">
               Register Complaint
             </button>
           </Link>

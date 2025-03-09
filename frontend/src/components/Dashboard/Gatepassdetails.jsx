@@ -66,9 +66,9 @@ const Gatepassdetails = () => {
     }
   };
 
-  if (!gatepassData.length) {
-    return <div>Loading...</div>;
-  }
+  // if (!gatepassData.length) {
+  //   return <div>Loading...</div>;
+  // }
 
   return (
     <>

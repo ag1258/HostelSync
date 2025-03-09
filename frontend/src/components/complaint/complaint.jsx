@@ -16,14 +16,13 @@ const Complaint = () => {
 
   const images = [
     {
-      src: "https://images.pexels.com/photos/7969098/pexels-photo-7969098.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Capture the Beauty",
+      src: "https://i.pinimg.com/474x/5d/d7/b9/5dd7b9e7e7959255a959b7cc3454bca5.jpg",
     },
     {
-      src: "https://images.pexels.com/photos/4907235/pexels-photo-4907235.jpeg?auto=compress&cs=tinysrgb&w=600",
+      src: "https://i.pinimg.com/236x/8b/49/84/8b49843ae3d1e4b893ecb77f1f3c722b.jpg",
     },
     {
-      src: "https://images.pexels.com/photos/7969094/pexels-photo-7969094.jpeg?auto=compress&cs=tinysrgb&w=600",
+      src: "https://i.pinimg.com/236x/1c/51/51/1c515101d753e5c2e8854a112ca3fbdc.jpg",
     },
   ];
 
@@ -93,7 +92,7 @@ const Complaint = () => {
     <div className="fixer">
       <div className="black__div"></div>
       <div className="w-full h-screen bg-transparent flex items-center justify-center main_form">
-        <div className="signup-container w-[70%] h-[80%] bg-white rounded-2xl flex overflow-hidden p-2 px-2 relative gap-3">
+        <div className="signup-container w-[70%] h-[70%] bg-white rounded-2xl flex overflow-hidden p-2 px-2 relative gap-3">
           <img
             className="absolute left-0 z-10 top-0"
             width={150}
@@ -201,7 +200,7 @@ const Complaint = () => {
               <div className="w-full flex items-end">
                 <button
                   onClick={handleSubmit}
-                  className="w-full text-[30px] text-white bg-[#e82574] p-3 rounded-2xl hover:bg-[#bc1c5c] transition-all"
+                  className="w-full text-[30px] text-white bg-primary p-3 rounded-2xl hover:bg-primary-dark transition-all"
                 >
                   Submit
                 </button>

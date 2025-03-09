@@ -11,7 +11,7 @@ const Announcement = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:3005/add-announcement', {
+      await axios.post('http://localhost:3005/announcement/addannouncement', {
         title,
         description,
       });
@@ -35,7 +35,7 @@ const Announcement = () => {
           isShrunk ? 'ml-[80px]' : 'ml-[300px]'
         } p-4 bg-white min-h-screen `}
       >
-        <div className="bg-white shadow-md rounded-lg p-6 w-[1000px] ml-[100px]">
+        <div className="bg-gray-100 shadow-md rounded-lg p-6 w-[750px] ml-[100px]">
           <h2 className="text-2xl font-bold text-gray-800 mb-4">Add Announcement</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Title Input */}

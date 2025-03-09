@@ -19,7 +19,7 @@ function Navbar() {
                         <Link to = '/announcements'><li>Announcements</li></Link>
                         <Link to = '/my-passes'><li>Gatepass</li></Link>
                         <Link to = '/complaints'><li>Complaint</li></Link>
-                        <Link to = '/contact'><li>Contact</li></Link>
+                        {/* <Link to = '/contact'><li>Contact</li></Link> */}
                     </ul>
                     <NavLink to="/"><button class="btn nav__btn">Logout</button></NavLink>
                 </nav>

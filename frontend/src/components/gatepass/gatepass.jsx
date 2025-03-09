@@ -24,7 +24,6 @@ const Gatepass = () => {
   const images = [
     {
       src: "https://images.pexels.com/photos/1454360/pexels-photo-1454360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      title: "Capture the Beauty",
     },
     {
       src: "https://images.pexels.com/photos/697244/pexels-photo-697244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -266,7 +265,7 @@ const Gatepass = () => {
               <div className="w-full h-full flex items-end">
                 <button
                   onClick={handleSubmit}
-                  className="w-full text-[30px] text-white bg-[#e82574] p-3 rounded-2xl hover:bg-[#bc1c5c] transition-all"
+                  className="w-full text-[30px] text-white bg-primary p-3 rounded-2xl hover:bg-primary-dark transition-all"
                 >
                   Apply
                 </button>

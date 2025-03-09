@@ -9,6 +9,8 @@ import {
 import Navbar from "../navbar/navbar";
 import Footer from "../footer/footer";
 import { Link } from "react-router-dom";
+import gatepass from "../../assets/gatepass.png"
+
 
 const StudentGatepass = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -86,9 +88,9 @@ const StudentGatepass = () => {
       <div className="min-h-[500px] flex space-x-2 my-5">
         <div className="sticky w-[500px] min-h-[300px] mx-[100px]">
           <img
-            src="/9557011.jpg"
+            src={gatepass}
             alt="about"
-            className="sticky h-[500px] w-[600px] top-0"
+            className="sticky h-[400px] w-[500px] top-0"
           />
         </div>
         <div>

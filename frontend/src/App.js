@@ -22,6 +22,8 @@ import Announcements from './components/announcement/Announcements';
 import CommonBath from './components/ViewRooms/CommonBath';
 import AttachedBath from './components/ViewRooms/AttachedBath';
 import ACAttachedBath from './components/ViewRooms/ACAttachedBath';
+import Menu from './components/Dashboard/Menu';
+import MenuPage from './components/menu/MenuPage';
 
 function App() {
 
@@ -50,6 +52,8 @@ function App() {
         <Route path='/payment' element={<PaymentPage/>}/>
         <Route path='/me' element={<ProfilePage/>}/>
         <Route path='/announcements' element={<Announcements/>}/>
+        <Route path='/Menu' element={<Menu/>}/>
+        <Route path='/studentmenu' element={<MenuPage/>}/>
       </Routes>
     </Router>
   );

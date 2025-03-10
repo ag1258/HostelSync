@@ -7,7 +7,7 @@ import {
   faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
 import Navbar from "../navbar/navbar";
-import Footer from "../footer/footer";
+import Footer from "../footer/StudentFooter";
 import { Link } from "react-router-dom";
 import gatepass from "../../assets/gatepass.png"
 
@@ -22,7 +22,7 @@ const StudentGatepass = () => {
   useEffect(() => {
     const fetchGatepassDetails = async () => {
       try {
-        const response = await axios.get("http://localhost:3005/my-gatepass", {
+        const response = await axios.get("http://localhost:3005/gatepass/my-gatepass", {
           withCredentials: true,
         });
         console.log("gatepasses", response.data.data);

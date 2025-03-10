@@ -69,7 +69,7 @@ const Complaint = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3005/usercomplaints",
+        "http://localhost:3005/complaint/usercomplaints",
         formData
       );
       alert("Complaint Registered Successfully");

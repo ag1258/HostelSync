@@ -119,7 +119,7 @@ const Bookings = () => {
       console.log(formData);
 
       const response = await axios.post(
-        "http://localhost:3005/reservation",
+        "http://localhost:3005/booking/reservation",
         formData,
         {
           headers: {
@@ -131,9 +131,9 @@ const Bookings = () => {
       alert("Your request has been sent. We will let you know about the room");
       navigate("/payment");
     } catch (error) {
-      console.log("in catch");
+      // console.log("in catch");
 
-      console.error("Error in Booking", error);
+      console.log("Error in Booking", error);
 
       const errorMessage = error.response?.data?.message || "An error occurred";
 

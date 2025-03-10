@@ -16,7 +16,7 @@ const StudentComplaints = () => {
       setError("");
       try {
         const response = await axios.get(
-          "http://localhost:3005/complaints/student",
+          "http://localhost:3005/complaint/complaints/student",
           { withCredentials: true }
         );
         setComplaints(response.data);

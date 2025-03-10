@@ -5,9 +5,9 @@ import { useNavigate } from 'react-router-dom'
 function Footer() {
     const navigate = useNavigate()
 
-    const hanldeClick = ()=> {
-        navigate('/my-passes')
-    }
+    // const hanldeClick = ()=> {
+    //     navigate('/my-passes')
+    // }
 
     return (
         <footer class="footer" id="contact">
@@ -23,9 +23,9 @@ function Footer() {
                     <div class="footer__col">
                         <h4>OUR SERVICES</h4>
                         <ul class="footer__links">
-                            <li><a href="/complaints">Complaints</a></li>
-                            <li onClick={hanldeClick}><a href="">Gatepass</a></li>
-                            <li><a href="/mess">Mess Card</a></li>
+                            <li><a href="/user-signup">Complaints</a></li>
+                            <li><a href="/user-signup">Gatepass</a></li>
+                            <li><a href="/user-signup">Mess Card</a></li>
                         </ul>
                     </div>
                     <div class="footer__col">

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "../navbar/navbar";
-import Footer from "../footer/footer";
+import Footer from "../footer/StudentFooter";
 import { Link } from "react-router-dom";
 import announcement from "../../assets/accounments.png";
 

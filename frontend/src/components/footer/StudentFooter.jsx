@@ -7,6 +7,12 @@ const StudentFooter = () => {
     const handleClick = () => {
         navigate('/my-passes');
     };
+    const handleComplaint = () => {
+        navigate('/complaints');
+    };
+    const handleMenu= () => {
+        navigate('/studentmenu');
+    };
 
     return (
         <footer className="bg-gray-800 text-white py-8" id="contact">
@@ -34,7 +40,7 @@ const StudentFooter = () => {
                 <div>
                     <h4 className="text-lg font-medium mb-4">Our Services</h4>
                     <ul className="space-y-2">
-                        <li>
+                        <li onClick={handleComplaint}>
                             <a href="/complaints" className="text-gray-400 hover:text-white transition">
                                 Complaints
                             </a>
@@ -44,9 +50,9 @@ const StudentFooter = () => {
                                 Gatepass
                             </a>
                         </li>
-                        <li>
-                            <a href="/mess" className="text-gray-400 hover:text-white transition">
-                                Mess Card
+                        <li onClick={handleMenu}>
+                            <a href="/studentmenu" className="text-gray-400 hover:text-white transition">
+                                Mess Menu
                             </a>
                         </li>
                     </ul>
